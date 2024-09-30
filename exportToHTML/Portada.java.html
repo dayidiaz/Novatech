@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Portada.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Portada.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionListener</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">HashMap</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Portada </span><span class="s0">extends </span><span class="s1">JFrame </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">JButton startButton</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Portada</span><span class="s2">() {</span>
+        <span class="s1">setTitle</span><span class="s2">(</span><span class="s3">&quot;Novatech - Portada&quot;</span><span class="s2">);</span>
+        <span class="s1">setSize</span><span class="s2">(</span><span class="s4">400</span><span class="s2">, </span><span class="s4">600</span><span class="s2">);</span>
+        <span class="s1">setDefaultCloseOperation</span><span class="s2">(</span><span class="s1">JFrame</span><span class="s2">.</span><span class="s1">EXIT_ON_CLOSE</span><span class="s2">);</span>
+        <span class="s1">setLocationRelativeTo</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+
+        <span class="s5">// Crear un panel y configurarlo</span>
+        <span class="s1">JPanel panel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JPanel</span><span class="s2">();</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s4">232</span><span class="s2">, </span><span class="s4">240</span><span class="s2">, </span><span class="s4">254</span><span class="s2">));</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">setLayout</span><span class="s2">(</span><span class="s0">new </span><span class="s1">BoxLayout</span><span class="s2">(</span><span class="s1">panel</span><span class="s2">, </span><span class="s1">BoxLayout</span><span class="s2">.</span><span class="s1">Y_AXIS</span><span class="s2">));</span>
+
+        <span class="s5">// Título</span>
+        <span class="s1">JLabel titleLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">(</span><span class="s3">&quot;Novatech&quot;</span><span class="s2">, </span><span class="s1">SwingConstants</span><span class="s2">.</span><span class="s1">CENTER</span><span class="s2">);</span>
+        <span class="s1">titleLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s3">&quot;Helvetica&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">BOLD</span><span class="s2">, </span><span class="s4">36</span><span class="s2">));</span>
+        <span class="s1">titleLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s4">44</span><span class="s2">, </span><span class="s4">62</span><span class="s2">, </span><span class="s4">80</span><span class="s2">));</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">titleLabel</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">Box</span><span class="s2">.</span><span class="s1">createRigidArea</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Dimension</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">20</span><span class="s2">))); </span><span class="s5">// Espacio</span>
+
+        <span class="s5">// Slogan</span>
+        <span class="s1">JLabel sloganLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">(</span><span class="s3">&quot;¡Tu mejor aliado para el aprendizaje!&quot;</span><span class="s2">, </span><span class="s1">SwingConstants</span><span class="s2">.</span><span class="s1">CENTER</span><span class="s2">);</span>
+        <span class="s1">sloganLabel</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s3">&quot;Helvetica&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s4">16</span><span class="s2">));</span>
+        <span class="s1">sloganLabel</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s4">243</span><span class="s2">, </span><span class="s4">156</span><span class="s2">, </span><span class="s4">18</span><span class="s2">));</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">sloganLabel</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">Box</span><span class="s2">.</span><span class="s1">createRigidArea</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Dimension</span><span class="s2">(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">40</span><span class="s2">))); </span><span class="s5">// Espacio</span>
+
+        <span class="s5">// Botón &quot;Empezar&quot;</span>
+        <span class="s1">startButton </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s3">&quot;Empezar&quot;</span><span class="s2">);</span>
+        <span class="s1">startButton</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Font</span><span class="s2">(</span><span class="s3">&quot;Helvetica&quot;</span><span class="s2">, </span><span class="s1">Font</span><span class="s2">.</span><span class="s1">PLAIN</span><span class="s2">, </span><span class="s4">14</span><span class="s2">));</span>
+        <span class="s1">startButton</span><span class="s2">.</span><span class="s1">setForeground</span><span class="s2">(</span><span class="s1">Color</span><span class="s2">.</span><span class="s1">WHITE</span><span class="s2">);</span>
+        <span class="s1">startButton</span><span class="s2">.</span><span class="s1">setBackground</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Color</span><span class="s2">(</span><span class="s4">88</span><span class="s2">, </span><span class="s4">214</span><span class="s2">, </span><span class="s4">141</span><span class="s2">));</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">startButton</span><span class="s2">);</span>
+
+        <span class="s5">// Acción para mostrar el login cuando se hace clic en el botón</span>
+        <span class="s1">startButton</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">ActionListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">) {</span>
+                <span class="s5">// Crear un HashMap para almacenar los usuarios y contraseñas</span>
+                <span class="s1">HashMap</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">users </span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashMap</span><span class="s2">&lt;&gt;();</span>
+                <span class="s1">users</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s3">&quot;admin&quot;</span><span class="s2">, </span><span class="s3">&quot;1234&quot;</span><span class="s2">); </span><span class="s5">// Usuario por defecto</span>
+
+                <span class="s1">Login login </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Login</span><span class="s2">(</span><span class="s1">users</span><span class="s2">); </span><span class="s5">// Pasar el mapa de usuarios al login</span>
+                <span class="s1">login</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                <span class="s1">dispose</span><span class="s2">(); </span><span class="s5">// Cerrar la portada</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">add</span><span class="s2">(</span><span class="s1">panel</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+
+
+
+
+</pre>
+</body>
+</html>

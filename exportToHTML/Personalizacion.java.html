@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Personalizacion.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Personalizacion.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.*;</span>
+
+<span class="s0">public class </span><span class="s1">Personalizacion </span><span class="s0">extends </span><span class="s1">JFrame </span><span class="s2">{</span>
+        <span class="s0">private </span><span class="s1">JComboBox</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">themeComboBox</span><span class="s2">;</span>
+        <span class="s0">private </span><span class="s1">JButton applyButton</span><span class="s2">;</span>
+
+        <span class="s0">public </span><span class="s1">Personalizacion</span><span class="s2">() {</span>
+            <span class="s1">setTitle</span><span class="s2">(</span><span class="s3">&quot;Personalización&quot;</span><span class="s2">);</span>
+            <span class="s1">setSize</span><span class="s2">(</span><span class="s4">400</span><span class="s2">, </span><span class="s4">200</span><span class="s2">);</span>
+            <span class="s1">setDefaultCloseOperation</span><span class="s2">(</span><span class="s1">JFrame</span><span class="s2">.</span><span class="s1">DISPOSE_ON_CLOSE</span><span class="s2">);</span>
+            <span class="s1">setLocationRelativeTo</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+
+            <span class="s1">JPanel panel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JPanel</span><span class="s2">();</span>
+            <span class="s1">panel</span><span class="s2">.</span><span class="s1">setLayout</span><span class="s2">(</span><span class="s0">new </span><span class="s1">GridLayout</span><span class="s2">(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">10</span><span class="s2">, </span><span class="s4">10</span><span class="s2">));</span>
+
+            <span class="s5">// Opciones de personalización</span>
+            <span class="s1">JLabel themeLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">(</span><span class="s3">&quot;Seleccionar Tema:&quot;</span><span class="s2">);</span>
+            <span class="s1">themeComboBox </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JComboBox</span><span class="s2">&lt;&gt;(</span><span class="s0">new </span><span class="s1">String</span><span class="s2">[]{</span><span class="s3">&quot;Tema Claro&quot;</span><span class="s2">, </span><span class="s3">&quot;Tema Oscuro&quot;</span><span class="s2">});</span>
+
+            <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">themeLabel</span><span class="s2">);</span>
+            <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">themeComboBox</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para aplicar cambios</span>
+            <span class="s1">applyButton </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s3">&quot;Aplicar&quot;</span><span class="s2">);</span>
+            <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">applyButton</span><span class="s2">);</span>
+
+            <span class="s1">add</span><span class="s2">(</span><span class="s1">panel</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>

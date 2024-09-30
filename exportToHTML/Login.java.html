@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Login.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Login.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionListener</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">HashMap</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Login </span><span class="s0">extends </span><span class="s1">JFrame </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">JTextField userField</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">JPasswordField passField</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">HashMap</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">users</span><span class="s2">; </span><span class="s3">// Mapa para almacenar los usuarios y contraseñas</span>
+
+    <span class="s0">public </span><span class="s1">Login</span><span class="s2">(</span><span class="s1">HashMap</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">users</span><span class="s2">) { </span><span class="s3">// Recibe el HashMap de usuarios</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">users </span><span class="s2">= </span><span class="s1">users</span><span class="s2">; </span><span class="s3">// Asigna el mapa de usuarios</span>
+        <span class="s1">setTitle</span><span class="s2">(</span><span class="s4">&quot;Novatech - Login&quot;</span><span class="s2">);</span>
+        <span class="s1">setSize</span><span class="s2">(</span><span class="s5">400</span><span class="s2">, </span><span class="s5">300</span><span class="s2">);</span>
+        <span class="s1">setDefaultCloseOperation</span><span class="s2">(</span><span class="s1">JFrame</span><span class="s2">.</span><span class="s1">EXIT_ON_CLOSE</span><span class="s2">);</span>
+        <span class="s1">setLocationRelativeTo</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);</span>
+
+        <span class="s1">JPanel panel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JPanel</span><span class="s2">();</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">setLayout</span><span class="s2">(</span><span class="s0">new </span><span class="s1">GridLayout</span><span class="s2">(</span><span class="s5">3</span><span class="s2">, </span><span class="s5">2</span><span class="s2">, </span><span class="s5">10</span><span class="s2">, </span><span class="s5">10</span><span class="s2">));</span>
+
+        <span class="s3">// Etiquetas y campos de texto</span>
+        <span class="s1">JLabel userLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">(</span><span class="s4">&quot;Usuario:&quot;</span><span class="s2">);</span>
+        <span class="s1">userField </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JTextField</span><span class="s2">();</span>
+        <span class="s1">JLabel passLabel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JLabel</span><span class="s2">(</span><span class="s4">&quot;Contraseña:&quot;</span><span class="s2">);</span>
+        <span class="s1">passField </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JPasswordField</span><span class="s2">();</span>
+
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">userLabel</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">userField</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">passLabel</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">passField</span><span class="s2">);</span>
+
+        <span class="s3">// Botones</span>
+        <span class="s1">JButton loginButton </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Iniciar Sesión&quot;</span><span class="s2">);</span>
+        <span class="s1">JButton registerButton </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JButton</span><span class="s2">(</span><span class="s4">&quot;Registrar&quot;</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">loginButton</span><span class="s2">);</span>
+        <span class="s1">panel</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">registerButton</span><span class="s2">);</span>
+
+        <span class="s3">// Acción para validar el login</span>
+        <span class="s1">loginButton</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">ActionListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">) {</span>
+                <span class="s1">String user </span><span class="s2">= </span><span class="s1">userField</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">();</span>
+                <span class="s1">String password </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">(</span><span class="s1">passField</span><span class="s2">.</span><span class="s1">getPassword</span><span class="s2">());</span>
+
+                <span class="s3">// Validar si el usuario y la contraseña coinciden</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">users</span><span class="s2">.</span><span class="s1">containsKey</span><span class="s2">(</span><span class="s1">user</span><span class="s2">) &amp;&amp; </span><span class="s1">users</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">user</span><span class="s2">).</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">password</span><span class="s2">)) {</span>
+                    <span class="s3">// Mostrar la ventana del dashboard</span>
+                    <span class="s1">Dashboard dashboard </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Dashboard</span><span class="s2">();</span>
+                    <span class="s1">dashboard</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                    <span class="s1">dispose</span><span class="s2">(); </span><span class="s3">// Cerrar la ventana de login</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showMessageDialog</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s4">&quot;Usuario o contraseña incorrecta&quot;</span><span class="s2">, </span><span class="s4">&quot;Error&quot;</span><span class="s2">, </span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">ERROR_MESSAGE</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s3">// Acción para mostrar la ventana de registro</span>
+        <span class="s1">registerButton</span><span class="s2">.</span><span class="s1">addActionListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">ActionListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">actionPerformed</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">) {</span>
+                <span class="s1">Registro registro </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Registro</span><span class="s2">(</span><span class="s1">users</span><span class="s2">); </span><span class="s3">// Pasar el mapa de usuarios al registro</span>
+                <span class="s1">registro</span><span class="s2">.</span><span class="s1">setVisible</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                <span class="s1">dispose</span><span class="s2">(); </span><span class="s3">// Cerrar el login</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">add</span><span class="s2">(</span><span class="s1">panel</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

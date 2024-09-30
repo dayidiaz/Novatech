@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>Opciones.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Opciones.java</font>
+</center></td></tr></table>
+<pre>
+
+    <span class="s1">import </span><span class="s0">javax</span><span class="s2">.</span><span class="s0">swing</span><span class="s2">.*;</span>
+<span class="s1">import </span><span class="s0">java</span><span class="s2">.</span><span class="s0">awt</span><span class="s2">.*;</span>
+<span class="s1">import </span><span class="s0">java</span><span class="s2">.</span><span class="s0">awt</span><span class="s2">.</span><span class="s0">event</span><span class="s2">.</span><span class="s0">ActionEvent</span><span class="s2">;</span>
+<span class="s1">import </span><span class="s0">java</span><span class="s2">.</span><span class="s0">awt</span><span class="s2">.</span><span class="s0">event</span><span class="s2">.</span><span class="s0">ActionListener</span><span class="s2">;</span>
+
+    <span class="s1">public class </span><span class="s0">Opciones </span><span class="s1">extends </span><span class="s0">JFrame </span><span class="s2">{</span>
+        <span class="s1">public </span><span class="s0">Opciones</span><span class="s2">() {</span>
+            <span class="s0">setTitle</span><span class="s2">(</span><span class="s3">&quot;Opciones&quot;</span><span class="s2">);</span>
+            <span class="s0">setSize</span><span class="s2">(</span><span class="s4">800</span><span class="s2">, </span><span class="s4">600</span><span class="s2">);</span>
+            <span class="s0">setDefaultCloseOperation</span><span class="s2">(</span><span class="s0">JFrame</span><span class="s2">.</span><span class="s0">EXIT_ON_CLOSE</span><span class="s2">);</span>
+            <span class="s0">setLocationRelativeTo</span><span class="s2">(</span><span class="s1">null</span><span class="s2">);</span>
+
+            <span class="s0">JPanel panel </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JPanel</span><span class="s2">();</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">setLayout</span><span class="s2">(</span><span class="s1">new </span><span class="s0">GridLayout</span><span class="s2">(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">10</span><span class="s2">, </span><span class="s4">10</span><span class="s2">));</span>
+
+            <span class="s5">// Botón para acceder al perfil de usuario</span>
+            <span class="s0">JButton perfilButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Perfil de Usuario&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">perfilButton</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para ver estadísticas de juego</span>
+            <span class="s0">JButton estadisticasButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Estadísticas de Juego&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">estadisticasButton</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para ver notificaciones</span>
+            <span class="s0">JButton notificacionesButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Notificaciones&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">notificacionesButton</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para ayuda y soporte</span>
+            <span class="s0">JButton ayudaButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Ayuda y Soporte&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">ayudaButton</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para desafíos y logros</span>
+            <span class="s0">JButton desafiosButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Desafíos y Logros&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">desafiosButton</span><span class="s2">);</span>
+
+            <span class="s5">// Botón para personalización del juego</span>
+            <span class="s0">JButton personalizacionButton </span><span class="s2">= </span><span class="s1">new </span><span class="s0">JButton</span><span class="s2">(</span><span class="s3">&quot;Personalización&quot;</span><span class="s2">);</span>
+            <span class="s0">panel</span><span class="s2">.</span><span class="s0">add</span><span class="s2">(</span><span class="s0">personalizacionButton</span><span class="s2">);</span>
+
+            <span class="s5">// Acción para abrir cada opción</span>
+            <span class="s0">perfilButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s0">PerfilUsuario perfilUsuario </span><span class="s2">= </span><span class="s1">new </span><span class="s0">PerfilUsuario</span><span class="s2">();</span>
+                    <span class="s0">perfilUsuario</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">estadisticasButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s5">// Aquí necesitarás pasar los datos reales de estadísticas</span>
+                    <span class="s0">Estadisticas estadisticas </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Estadisticas</span><span class="s2">(</span><span class="s4">10</span><span class="s2">, </span><span class="s4">5</span><span class="s2">);</span>
+                    <span class="s0">estadisticas</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">notificacionesButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s0">Notificaciones notificaciones </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Notificaciones</span><span class="s2">(</span><span class="s3">&quot;Tienes nuevas actualizaciones.&quot;</span><span class="s2">);</span>
+                    <span class="s0">notificaciones</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">ayudaButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s0">AyudaSoporte ayudaSoporte </span><span class="s2">= </span><span class="s1">new </span><span class="s0">AyudaSoporte</span><span class="s2">();</span>
+                    <span class="s0">ayudaSoporte</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">desafiosButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s0">DesafiosLogros desafiosLogros </span><span class="s2">= </span><span class="s1">new </span><span class="s0">DesafiosLogros</span><span class="s2">();</span>
+                    <span class="s0">desafiosLogros</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">personalizacionButton</span><span class="s2">.</span><span class="s0">addActionListener</span><span class="s2">(</span><span class="s1">new </span><span class="s0">ActionListener</span><span class="s2">() {</span>
+                <span class="s0">@Override</span>
+                <span class="s1">public void </span><span class="s0">actionPerformed</span><span class="s2">(</span><span class="s0">ActionEvent e</span><span class="s2">) {</span>
+                    <span class="s0">Personalizacion personalizacion </span><span class="s2">= </span><span class="s1">new </span><span class="s0">Personalizacion</span><span class="s2">();</span>
+                    <span class="s0">personalizacion</span><span class="s2">.</span><span class="s0">setVisible</span><span class="s2">(</span><span class="s1">true</span><span class="s2">);</span>
+                <span class="s2">}</span>
+            <span class="s2">});</span>
+
+            <span class="s0">add</span><span class="s2">(</span><span class="s0">panel</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>
